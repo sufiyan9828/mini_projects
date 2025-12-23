@@ -26,7 +26,20 @@
   ">
     Scisser
   </button>
+  <button onclick="
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  ">
+    Reset Score
+  </button>
   <script>
+    const score = {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    };
+
     function playGame(PlayerMove) {
       const computerMove = pickComputerMove();
       let result = '';
@@ -57,7 +70,17 @@
           result = 'you Win';
         }
       }
-      alert(`You Picked ${PlayerMove}, Computer Picked ${computerMove}, ${result}`)
+
+      if (result === 'you Win') {
+        score.wins += 1;
+      } else if (result === 'you Lose') {
+        score.losses += 1;
+      } else if (result === 'Tie!!'){
+        score.ties += 1;
+      }
+
+      alert(`You Picked ${PlayerMove}, Computer Picked ${computerMove}, ${result}.
+Wins:${score.wins} Loss:${score.losses} Tie: ${score.ties}`)
     }
 
     function pickComputerMove() {
