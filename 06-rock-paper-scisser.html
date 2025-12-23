@@ -26,15 +26,23 @@ playGame('Scisser');
 ">
   Scisser
 </button>
+
+<p class="js-result"></p>
+<p class="js-moves"></p>
+<p class="js-score"></p>
+
 <button onclick="
 score.wins = 0;
 score.losses = 0;
 score.ties = 0;
 localStorage.removeItem('score');
+updateScoreElement();
 ">
   Reset Score
 </button>
 <script>
+
+
   const score = JSON.parse(localStorage.getItem('score')) || {
     wins: 0,
     losses: 0,
@@ -80,6 +88,23 @@ localStorage.removeItem('score');
     } else if (result === 'Tie!!') {
       score.ties += 1;
     }
+
+    updateResultElement();
+    updateMoveElement();
+    updateScoreElement();
+
+    function updateScoreElement() {
+      document.querySelector('.js-score').innerHTML = `Wins:${score.wins} Loss:${score.losses} Tie: ${score.ties}`;
+    }
+
+    function updateResultElement() {
+      document.querySelector('.js-result').innerHTML = `${result}`;
+    }
+
+    function updateMoveElement() {
+      document.querySelector('.js-moves').innerHTML = `You Picked ${PlayerMove}, Computer Picked ${computerMove}`;
+    }
+
 
     console.log(localStorage.setItem('score', JSON.stringify(score)));
 
