@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Project Hub</title>
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .project-card {
+      background-color: rgb(40, 40, 40);
+      border: 1px solid rgb(60, 60, 60);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-card h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Mini Projects</h1>
+
+  <div class="project-grid">
+    <a href="./coin-flip.html" class="project-card">
+      <h2>Coin Flip Game</h2>
+    </a>
+
+    <a href="./Rock-Paper-Scisser/06-rock-paper-scisser.html" class="project-card">
+      <h2>Rock Paper Scissors</h2>
+    </a>
+
+    <a href="./5O-calculator.html" class="project-card">
+      <h2>Calculator</h2>
+    </a>
+
+    <a href="./09-dom-projects.html" class="project-card">
+      <h2>DOM Projects</h2>
+    </a>
+
+    <a href="./05-cart_quantity.html" class="project-card">
+      <h2>Cart Quantity</h2>
+    </a>
+  </div>
+
+</body>
+</html>
