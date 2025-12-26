@@ -6,53 +6,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <style>
-  p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
+  body {
+    background-color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .calculation {
+    color: white;
+    font-size: 45px;
+    padding: 0px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  .gray-button {
+    background-color: rgb(51, 51, 51);
+    color: white;
+  }
+  .calculation-button {
+    border-radius: 50px;
+    font-size: 25px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+  .orange-button {
+    background-color: orange;
+    color: white;
+  }
+  .clear-button {
+    font-size: 15px;
   }
 </style>
 </head>
-
 <body>
-<h1>Calculator</h1>
-  <p class="js-type"></p>
-
-  <p>
-    <button onclick="updateCalculation('1');">1</button>
-    <button onclick="updateCalculation('2');">2</button>
-    <button onclick="updateCalculation('3');">3</button>
-    <button onclick="updateCalculation('+');">+</button>
+  <p class="js-type calculation">3</p>
+  <p class="">
+    <button onclick="updateCalculation('1');" class="calculation-button gray-button">1</button>
+    <button onclick="updateCalculation('2');" class="calculation-button gray-button">2</button>
+    <button onclick="updateCalculation('3');" class="calculation-button gray-button">3</button>
+    <button onclick="updateCalculation('+');" class="calculation-button orange-button">+</button>
   </p>
-  <p>
-    <button onclick="updateCalculation('4');">4</button>
-    <button onclick="updateCalculation('5');">5</button>
-    <button onclick="updateCalculation('6');">6</button>
-    <button onclick="updateCalculation('-');">-</button>
+  <p class="">
+    <button onclick="updateCalculation('4');" class="calculation-button gray-button">4</button>
+    <button onclick="updateCalculation('5');" class="calculation-button gray-button">5</button>
+    <button onclick="updateCalculation('6');" class="calculation-button gray-button">6</button>
+    <button onclick="updateCalculation('-');" class="calculation-button orange-button">-</button>
   </p>  
-  <p>
-    <button onclick="updateCalculation('7');">7</button>
-    <button onclick="updateCalculation('8');">8</button>
-    <button onclick="updateCalculation('9');">9</button>
-    <button onclick="updateCalculation('*');">*</button>
+  <p class="">
+    <button onclick="updateCalculation('7');" class="calculation-button gray-button">7</button>
+    <button onclick="updateCalculation('8');" class="calculation-button gray-button">8</button>
+    <button onclick="updateCalculation('9');" class="calculation-button gray-button">9</button>
+    <button onclick="updateCalculation('*');" class="calculation-button orange-button">*</button>
   </p>
-  <p>
-    <button onclick="updateCalculation('0');">0</button>
-    <button onclick="updateCalculation('.');">.</button>
-    <button onclick="calculateResult();">=</button>
-    <button onclick="updateCalculation('/');">/</button>
+  <p class="">
+    <button onclick="updateCalculation('0');" class="calculation-button gray-button">0</button>
+    <button onclick="updateCalculation('.');" class="calculation-button gray-button">.</button>
+    <button onclick="calculateResult();" class="calculation-button gray-button">=</button>
+    <button onclick="updateCalculation('/');" class="calculation-button orange-button">/</button>
   </p>
-  <p>
-    <button onclick="clearCalculation();">Clear</button>
+  <p class="">
+    <button onclick="clearCalculation();" class="calculation-button gray-button clear-button">Clear</button>
   </p>
 
   <script>
     let calculation = localStorage.getItem('calculation') || '';
     
-    // Display stored value immediately on load
     displayCalculation();
 
     function updateCalculation(value) {
