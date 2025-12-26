@@ -4,41 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="10-calculator.css">
 <title>Document</title>
-<style>
-  body {
-    background-color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .calculation {
-    color: white;
-    font-size: 45px;
-    padding: 0px;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 0px;
-  }
-  .gray-button {
-    background-color: rgb(51, 51, 51);
-    color: white;
-  }
-  .calculation-button {
-    border-radius: 50px;
-    font-size: 25px;
-    border: none;
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-  }
-  .orange-button {
-    background-color: orange;
-    color: white;
-  }
-  .clear-button {
-    font-size: 15px;
-  }
-</style>
 </head>
 <body>
   <p class="js-type calculation">3</p>
@@ -70,37 +37,7 @@
     <button onclick="clearCalculation();" class="calculation-button gray-button clear-button">Clear</button>
   </p>
 
-  <script>
-    let calculation = localStorage.getItem('calculation') || '';
-    
-    displayCalculation();
-
-    function updateCalculation(value) {
-      calculation += value;
-      saveAndDisplay();
-    }
-
-    function calculateResult() {
-      if (!calculation) return;
-      calculation = eval(calculation);
-      calculation = String(calculation);
-      saveAndDisplay();
-    }
-
-    function clearCalculation() {
-      calculation = '';
-      saveAndDisplay();
-    }
-
-    function saveAndDisplay() {
-      localStorage.setItem('calculation', calculation);
-      displayCalculation();
-    }
-
-    function displayCalculation() {
-      document.querySelector('.js-type').innerHTML = calculation || '0';
-    }
-  </script>
+  <script src="10-calculator.js"></script>
 </body>
 
 </html>
